@@ -558,33 +558,101 @@ st.markdown('<div class="report-section">', unsafe_allow_html=True)
 st.subheader(":material/build: System Connection Diagram")
 
 recommended_current_diagram = float(regulator_specs['recommended_current'])
+
+# Create a more intuitive visual diagram using columns and boxes
+st.markdown("""
+<style>
+.diagram-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+.diagram-arrow {
+    text-align: center;
+    font-size: 2rem;
+    color: #667eea;
+    margin: 0.5rem 0;
+}
+.diagram-info {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Solar Panels
 st.markdown(f"""
-```
-                           :material/wb_sunny: SOLAR PANELS
-                      ({calc['num_panels']} × {calc['pv_power']}W)
-                               │
-                               │ {cable_specs['cable_section']:.1f}mm² cable
-                               │ Fuse: {cable_specs['fuse_rating']}A
-                               ▼
-                    :material/settings: CHARGE CONTROLLER
-                    ({calc['regulator_type']} {math.ceil(recommended_current_diagram)}A)
-                               │
-                               │
-                ┌──────────────┴──────────────┐
-                │                             │
-                ▼                             ▼
-         :material/battery_charging_full: BATTERY BANK              :material/power: DC LOADS
-    ({calc['num_batteries']} × {calc['battery_capacity']}Ah {calc['battery_voltage']}V)      ({calc['total_power']}W)
-    Total: {calc['num_batteries'] * calc['battery_capacity']}Ah
-                │
-                │
-                ▼
-         🔄 INVERTER
-        ({calc['total_power']}W+)
-                │
-                ▼
-         :material/bolt: AC LOADS
-```
+<div class="diagram-box">
+    ☀️ PANNEAUX SOLAIRES<br>
+    <span style="font-size: 1.2rem;">{calc['num_panels']} × {calc['pv_power']}W = {calc['total_pv_power']}W</span>
+</div>
+<div class="diagram-info">Production quotidienne: {calc['total_pv_power'] * calc['sun_hours']:.0f} Wh</div>
+<div class="diagram-arrow">↓</div>
+<div class="diagram-info">Câble: {cable_specs['cable_section']:.1f}mm² | Protection: Fusible {cable_specs['fuse_rating']}A</div>
+<div class="diagram-arrow">↓</div>
+""", unsafe_allow_html=True)
+
+# Charge Controller
+st.markdown(f"""
+<div class="diagram-box">
+    ⚙️ RÉGULATEUR DE CHARGE<br>
+    <span style="font-size: 1.2rem;">{calc['regulator_type']} - {math.ceil(recommended_current_diagram)}A</span>
+</div>
+<div class="diagram-info">Efficacité: {regulator_specs['efficiency']*100:.0f}%</div>
+<div class="diagram-arrow">↓</div>
+""", unsafe_allow_html=True)
+
+# Battery Bank and Inverter in columns
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown(f"""
+    <div class="diagram-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        🔋 BANQUE DE BATTERIES<br>
+        <span style="font-size: 1.1rem;">{calc['num_batteries']} × {calc['battery_capacity']}Ah {calc['battery_voltage']}V</span><br>
+        <span style="font-size: 0.9rem;">Capacité totale: {calc['num_batteries'] * calc['battery_capacity']}Ah</span><br>
+        <span style="font-size: 0.9rem;">Énergie: {calc['num_batteries'] * calc['battery_capacity'] * calc['battery_voltage']:.0f}Wh</span>
+    </div>
+    <div class="diagram-info">Autonomie: {calc['autonomy_days']} jours | DoD: {calc['discharge_depth']*100:.0f}%</div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown(f"""
+    <div class="diagram-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+        🔄 ONDULEUR / CONVERTISSEUR<br>
+        <span style="font-size: 1.2rem;">{calc['total_power']}W minimum</span><br>
+        <span style="font-size: 0.9rem;">DC {calc['battery_voltage']}V → AC 230V</span>
+    </div>
+    <div class="diagram-info">Puissance de pointe: {calc['total_power'] * 1.5:.0f}W recommandé</div>
+    """, unsafe_allow_html=True)
+
+st.markdown('<div class="diagram-arrow">↓</div>', unsafe_allow_html=True)
+
+# Loads
+st.markdown(f"""
+<div class="diagram-box" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+    ⚡ CHARGES ÉLECTRIQUES<br>
+    <span style="font-size: 1.2rem;">Consommation: {calc['daily_energy']:.0f} Wh/jour</span><br>
+    <span style="font-size: 0.9rem;">Puissance totale: {calc['total_power']}W</span>
+</div>
+<div class="diagram-info">{len(factory.get_equipments())} équipements connectés</div>
+""", unsafe_allow_html=True)
+
+# Legend
+st.markdown("---")
+st.markdown("""
+**📋 Légende du Flux d'Énergie:**
+1. ☀️ **Panneaux Solaires** → Captent l'énergie solaire et la convertissent en électricité DC
+2. ⚙️ **Régulateur** → Contrôle la charge des batteries et optimise le rendement
+3. 🔋 **Batteries** → Stockent l'énergie pour utilisation durant la nuit ou jours nuageux
+4. 🔄 **Onduleur** → Convertit le courant DC en AC 230V pour les appareils électriques
+5. ⚡ **Charges** → Vos équipements électriques alimentés par le système
 """)
 
 st.markdown('</div>', unsafe_allow_html=True)
