@@ -1,0 +1,137 @@
+{
+  "title": "Solar Solution",
+  "subtitle": "Outil de dimensionnement de systèmes photovoltaïques",
+  "nav_home": "Accueil",
+  "nav_equipments": "Équipements",
+  "nav_calculations": "Calculs",
+  "nav_report": "Rapport",
+  "New Equipment": {
+    "title": "Ajouter un équipement",
+    "name": "Nom",
+    "power": "Puissance (W)",
+    "time": "Temps (h)",
+    "add button": "Ajouter",
+    "success message": "{name} ({power} W, {time} h) ajouté avec succès"
+  },
+  "Edit Equipment": {
+    "title": "Modifier un équipement",
+    "select": "Sélectionner un équipement",
+    "edit button": "Modifier",
+    "success message": "{name} modifié avec succès"
+  },
+  "Delete Equipment": {
+    "title": "Supprimer un équipement",
+    "select": "Sélectionner un équipement",
+    "delete button": "Supprimer",
+    "confirm": "Êtes-vous sûr de vouloir supprimer cet équipement ?"
+  },
+  "Equipment": {
+    "error": "L'équipement '{name}' existe déjà dans la liste."
+  },
+  "Validation": {
+    "name_empty": "Le nom de l'équipement ne peut pas être vide.",
+    "power_invalid": "La puissance doit être supérieure à 0 W.",
+    "time_invalid": "Le temps d'utilisation doit être supérieur à 0 h."
+  },
+  "Actions": {
+    "sample": "Exemple",
+    "delete_all": "Tout supprimer"
+  },
+  "Library": {
+    "title": "Bibliothèque d'Équipements",
+    "subtitle": "Ajouter depuis la bibliothèque",
+    "category": "Catégorie",
+    "select_equipment": "Sélectionner un équipement",
+    "add_from_library": ":material/add_circle: Ajouter",
+    "description": "Description",
+    "specifications": "Spécifications"
+  },
+  "Charts": {
+    "consumption_title": "Répartition de la Consommation",
+    "consumption_subtitle": "Consommation énergétique par équipement (Wh/jour)",
+    "power_time_title": "Puissance vs Temps d'Utilisation",
+    "equipment": "Équipement",
+    "energy": "Énergie (Wh)",
+    "power": "Puissance (W)",
+    "time": "Temps (h)"
+  },
+  "Storage": {
+    "title": "Sauvegarder/Charger",
+    "save_label": "Nom de la configuration",
+    "save_button": ":material/save: Sauvegarder",
+    "load_label": "Charger une configuration",
+    "load_button": ":material/folder_open: Charger",
+    "delete_button": ":material/delete: Supprimer",
+    "export_button": ":material/download: Exporter CSV",
+    "save_success": "Configuration '{name}' sauvegardée avec succès !",
+    "load_success": "Configuration '{name}' chargée avec succès !",
+    "delete_success": "Configuration '{name}' supprimée !",
+    "no_configs": "Aucune configuration sauvegardée",
+    "name_required": "Veuillez entrer un nom pour la configuration"
+  },
+  "Main": {
+    "title": "Système Solaire - Dimensionnement",
+    "empty_state": "Veuillez ajouter un équipement ou utiliser l'exemple dans la barre latérale.",
+    "daily_consumption": "Votre consommation journalière est de",
+    "converter_power": "Vous avez besoin d'un convertisseur de plus de"
+  },
+  "Hourly": {
+    "title": "Profil de Consommation Horaire",
+    "subtitle": "Répartition sur 24 heures",
+    "chart_title": "Courbe de Charge Journalière",
+    "hour": "Heure",
+    "consumption": "Consommation (W)",
+    "peak_consumption": "Pic de consommation",
+    "average_consumption": "Consommation moyenne",
+    "usage_hours": "Heures d'utilisation",
+    "start_hour": "Heure de début",
+    "end_hour": "Heure de fin",
+    "configure": "Configurer les horaires"
+  },
+  "Regulator": {
+    "title": "Régulateur de Charge",
+    "subtitle": "Dimensionnement MPPT/PWM",
+    "type": "Type de régulateur",
+    "voltage": "Tension système (V)",
+    "pv_voltage": "Tension panneaux PV (V)",
+    "current": "Courant (A)",
+    "power": "Puissance (W)",
+    "recommended": "Régulateur recommandé",
+    "min_rating": "Calibre minimum",
+    "safety_margin": "Marge de sécurité (25%)"
+  },
+  "Wiring": {
+    "title": "Câblage et Protection",
+    "subtitle": "Section des câbles et protections",
+    "cable_length": "Longueur câble (m)",
+    "voltage_drop": "Chute de tension max (%)",
+    "pv_to_reg": "PV → Régulateur",
+    "reg_to_bat": "Régulateur → Batteries",
+    "bat_to_conv": "Batteries → Convertisseur",
+    "cable_section": "Section câble",
+    "fuse_rating": "Calibre fusible",
+    "breaker_rating": "Disjoncteur",
+    "actual_drop": "Chute réelle"
+  },
+  "Economics": {
+    "title": "Analyse Économique",
+    "costs_title": "Coûts de l'Installation",
+    "battery_cost": "Coût unitaire batterie (€)",
+    "pv_cost": "Coût unitaire panneau PV (€)",
+    "converter_cost": "Coût convertisseur (€)",
+    "regulator_cost": "Coût régulateur (€)",
+    "installation_cost": "Coût installation (€)",
+    "total_batteries": "Total batteries",
+    "total_pv": "Total panneaux PV",
+    "total_system": "Coût total du système",
+    "savings_title": "Retour sur Investissement",
+    "electricity_price": "Prix électricité (€/kWh)",
+    "daily_savings": "Économies journalières",
+    "monthly_savings": "Économies mensuelles",
+    "annual_savings": "Économies annuelles",
+    "roi_years": "Retour sur investissement",
+    "co2_title": "Impact Environnemental",
+    "co2_avoided": "CO₂ évité par an",
+    "trees_equivalent": "Équivalent en arbres plantés"
+  }
+}

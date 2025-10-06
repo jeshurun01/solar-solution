@@ -1,0 +1,316 @@
+{
+  "categories": {
+    "kitchen": {
+      "name_fr": "Cuisine",
+      "name_en": "Kitchen",
+      "icon": "🍳",
+      "items": [
+        {
+          "name": "Réfrigérateur / Refrigerator",
+          "power": 150,
+          "time": 24,
+          "start_hour": 0,
+          "description_fr": "Réfrigérateur standard 24h/24",
+          "description_en": "Standard refrigerator 24/7"
+        },
+        {
+          "name": "Congélateur / Freezer",
+          "power": 200,
+          "time": 24,
+          "start_hour": 0,
+          "description_fr": "Congélateur 24h/24",
+          "description_en": "Freezer 24/7"
+        },
+        {
+          "name": "Micro-ondes / Microwave",
+          "power": 1000,
+          "time": 0.5,
+          "start_hour": 12,
+          "description_fr": "Utilisation ponctuelle 30min",
+          "description_en": "Occasional use 30min"
+        },
+        {
+          "name": "Four électrique / Electric oven",
+          "power": 2500,
+          "time": 1,
+          "start_hour": 12,
+          "description_fr": "Cuisson 1h par jour",
+          "description_en": "Cooking 1h per day"
+        },
+        {
+          "name": "Cafetière / Coffee maker",
+          "power": 800,
+          "time": 0.5,
+          "start_hour": 7,
+          "description_fr": "Utilisation matin 30min",
+          "description_en": "Morning use 30min"
+        },
+        {
+          "name": "Bouilloire / Kettle",
+          "power": 2000,
+          "time": 0.2,
+          "start_hour": 7,
+          "description_fr": "Utilisation brève 12min",
+          "description_en": "Brief use 12min"
+        }
+      ]
+    },
+    "laundry": {
+      "name_fr": "Buanderie",
+      "name_en": "Laundry",
+      "icon": "🧺",
+      "items": [
+        {
+          "name": "Lave-linge / Washing machine",
+          "power": 500,
+          "time": 2,
+          "start_hour": 10,
+          "description_fr": "2 cycles par semaine",
+          "description_en": "2 cycles per week"
+        },
+        {
+          "name": "Sèche-linge / Dryer",
+          "power": 2500,
+          "time": 1.5,
+          "start_hour": 12,
+          "description_fr": "Usage occasionnel",
+          "description_en": "Occasional use"
+        },
+        {
+          "name": "Fer à repasser / Iron",
+          "power": 1500,
+          "time": 1,
+          "start_hour": 14,
+          "description_fr": "Repassage hebdomadaire",
+          "description_en": "Weekly ironing"
+        }
+      ]
+    },
+    "electronics": {
+      "name_fr": "Électronique",
+      "name_en": "Electronics",
+      "icon": "💻",
+      "items": [
+        {
+          "name": "Ordinateur portable / Laptop",
+          "power": 65,
+          "time": 8,
+          "start_hour": 9,
+          "description_fr": "Travail journée complète",
+          "description_en": "Full day work"
+        },
+        {
+          "name": "Ordinateur fixe / Desktop PC",
+          "power": 200,
+          "time": 6,
+          "start_hour": 9,
+          "description_fr": "Travail/Gaming",
+          "description_en": "Work/Gaming"
+        },
+        {
+          "name": "Écran / Monitor",
+          "power": 30,
+          "time": 8,
+          "start_hour": 9,
+          "description_fr": "Écran externe",
+          "description_en": "External monitor"
+        },
+        {
+          "name": "Télévision LED 32\" / LED TV 32\"",
+          "power": 50,
+          "time": 4,
+          "start_hour": 19,
+          "description_fr": "Soirée",
+          "description_en": "Evening"
+        },
+        {
+          "name": "Télévision LED 55\" / LED TV 55\"",
+          "power": 120,
+          "time": 4,
+          "start_hour": 19,
+          "description_fr": "Soirée",
+          "description_en": "Evening"
+        },
+        {
+          "name": "Box Internet / Internet box",
+          "power": 15,
+          "time": 24,
+          "start_hour": 0,
+          "description_fr": "24h/24",
+          "description_en": "24/7"
+        },
+        {
+          "name": "Console de jeux / Game console",
+          "power": 150,
+          "time": 3,
+          "start_hour": 19,
+          "description_fr": "Gaming soirée",
+          "description_en": "Evening gaming"
+        },
+        {
+          "name": "Imprimante / Printer",
+          "power": 50,
+          "time": 1,
+          "start_hour": 14,
+          "description_fr": "Usage occasionnel",
+          "description_en": "Occasional use"
+        }
+      ]
+    },
+    "lighting": {
+      "name_fr": "Éclairage",
+      "name_en": "Lighting",
+      "icon": "💡",
+      "items": [
+        {
+          "name": "Ampoule LED 10W / LED bulb 10W",
+          "power": 10,
+          "time": 5,
+          "start_hour": 18,
+          "description_fr": "Éclairage soirée",
+          "description_en": "Evening lighting"
+        },
+        {
+          "name": "Éclairage salon / Living room lights",
+          "power": 80,
+          "time": 5,
+          "start_hour": 18,
+          "description_fr": "Éclairage principal soirée",
+          "description_en": "Main evening lighting"
+        },
+        {
+          "name": "Éclairage extérieur / Outdoor lights",
+          "power": 50,
+          "time": 12,
+          "start_hour": 18,
+          "description_fr": "Éclairage nuit",
+          "description_en": "Night lighting"
+        }
+      ]
+    },
+    "heating_cooling": {
+      "name_fr": "Chauffage/Climatisation",
+      "name_en": "Heating/Cooling",
+      "icon": "❄️",
+      "items": [
+        {
+          "name": "Climatiseur / Air conditioner",
+          "power": 1500,
+          "time": 6,
+          "start_hour": 12,
+          "description_fr": "Usage été après-midi",
+          "description_en": "Summer afternoon use"
+        },
+        {
+          "name": "Ventilateur / Fan",
+          "power": 60,
+          "time": 8,
+          "start_hour": 12,
+          "description_fr": "Journée complète",
+          "description_en": "Full day"
+        },
+        {
+          "name": "Radiateur électrique / Electric heater",
+          "power": 2000,
+          "time": 8,
+          "start_hour": 18,
+          "description_fr": "Soirée et nuit hiver",
+          "description_en": "Evening and night winter"
+        },
+        {
+          "name": "Chauffe-eau électrique / Electric water heater",
+          "power": 2000,
+          "time": 4,
+          "start_hour": 2,
+          "description_fr": "Heures creuses",
+          "description_en": "Off-peak hours"
+        }
+      ]
+    },
+    "water": {
+      "name_fr": "Eau",
+      "name_en": "Water",
+      "icon": "💧",
+      "items": [
+        {
+          "name": "Pompe à eau / Water pump",
+          "power": 750,
+          "time": 3,
+          "start_hour": 6,
+          "description_fr": "Pompage quotidien",
+          "description_en": "Daily pumping"
+        },
+        {
+          "name": "Surpresseur / Booster pump",
+          "power": 500,
+          "time": 2,
+          "start_hour": 7,
+          "description_fr": "Pression eau",
+          "description_en": "Water pressure"
+        }
+      ]
+    },
+    "personal_care": {
+      "name_fr": "Soins personnels",
+      "name_en": "Personal care",
+      "icon": "👤",
+      "items": [
+        {
+          "name": "Sèche-cheveux / Hair dryer",
+          "power": 1500,
+          "time": 0.3,
+          "start_hour": 7,
+          "description_fr": "Usage matin 20min",
+          "description_en": "Morning use 20min"
+        },
+        {
+          "name": "Aspirateur / Vacuum cleaner",
+          "power": 1200,
+          "time": 0.5,
+          "start_hour": 10,
+          "description_fr": "Ménage quotidien",
+          "description_en": "Daily cleaning"
+        },
+        {
+          "name": "Chargeur téléphone / Phone charger",
+          "power": 10,
+          "time": 2,
+          "start_hour": 22,
+          "description_fr": "Charge nocturne",
+          "description_en": "Night charging"
+        }
+      ]
+    },
+    "workshop": {
+      "name_fr": "Atelier",
+      "name_en": "Workshop",
+      "icon": "🔧",
+      "items": [
+        {
+          "name": "Perceuse / Drill",
+          "power": 600,
+          "time": 0.5,
+          "start_hour": 14,
+          "description_fr": "Usage ponctuel",
+          "description_en": "Occasional use"
+        },
+        {
+          "name": "Scie circulaire / Circular saw",
+          "power": 1500,
+          "time": 1,
+          "start_hour": 14,
+          "description_fr": "Travaux bricolage",
+          "description_en": "DIY work"
+        },
+        {
+          "name": "Compresseur / Air compressor",
+          "power": 2000,
+          "time": 0.5,
+          "start_hour": 14,
+          "description_fr": "Usage ponctuel",
+          "description_en": "Occasional use"
+        }
+      ]
+    }
+  }
+}

@@ -1036,7 +1036,7 @@ if not st.session_state["equipments"].is_empty():
         # Protection summary
         st.divider()
         st.info(
-            f":material/warning: **Protections recommandées:**\n\n"
+            f"⚠️ **Protections recommandées:**\n\n"
             f"- Fusibles DC: {pv_to_reg_cable['fuse_rating']}A (PV), {reg_to_bat_cable['fuse_rating']}A (Batterie)\n"
             f"- Disjoncteur batterie: {bat_to_conv_cable['fuse_rating']}A\n"
             f"- Câbles cuivre multiconducteurs recommandés\n"

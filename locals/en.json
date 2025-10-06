@@ -1,0 +1,137 @@
+{
+  "title": "Solar Solution",
+  "subtitle": "Photovoltaic System Dimensioning Tool",
+  "nav_home": "Home",
+  "nav_equipments": "Equipments",
+  "nav_calculations": "Calculations",
+  "nav_report": "Report",
+  "New Equipment": {
+    "title": "Add equipment",
+    "name": "Name",
+    "power": "Power (W)",
+    "time": "Time (h)",
+    "add button": "Add",
+    "success message": "{name} ({power} W, {time} h) added successfully"
+  },
+  "Edit Equipment": {
+    "title": "Edit equipment",
+    "select": "Select equipment",
+    "edit button": "Update",
+    "success message": "{name} updated successfully"
+  },
+  "Delete Equipment": {
+    "title": "Delete equipment",
+    "select": "Select equipment",
+    "delete button": "Delete",
+    "confirm": "Are you sure you want to delete this equipment?"
+  },
+  "Equipment": {
+    "error": "Equipment '{name}' already exists in the list."
+  },
+  "Validation": {
+    "name_empty": "Equipment name cannot be empty.",
+    "power_invalid": "Power must be greater than 0 W.",
+    "time_invalid": "Usage time must be greater than 0 h."
+  },
+  "Actions": {
+    "sample": "Sample",
+    "delete_all": "Delete All"
+  },
+  "Library": {
+    "title": "Equipment Library",
+    "subtitle": "Add from library",
+    "category": "Category",
+    "select_equipment": "Select equipment",
+    "add_from_library": ":material/add_circle: Add",
+    "description": "Description",
+    "specifications": "Specifications"
+  },
+  "Charts": {
+    "consumption_title": "Consumption Distribution",
+    "consumption_subtitle": "Energy consumption by equipment (Wh/day)",
+    "power_time_title": "Power vs Usage Time",
+    "equipment": "Equipment",
+    "energy": "Energy (Wh)",
+    "power": "Power (W)",
+    "time": "Time (h)"
+  },
+  "Storage": {
+    "title": "Save/Load",
+    "save_label": "Configuration name",
+    "save_button": ":material/save: Save",
+    "load_label": "Load configuration",
+    "load_button": ":material/folder_open: Load",
+    "delete_button": ":material/delete: Delete",
+    "export_button": ":material/download: Export CSV",
+    "save_success": "Configuration '{name}' saved successfully!",
+    "load_success": "Configuration '{name}' loaded successfully!",
+    "delete_success": "Configuration '{name}' deleted!",
+    "no_configs": "No saved configurations",
+    "name_required": "Please enter a configuration name"
+  },
+  "Main": {
+    "title": "Solar System - Sizing",
+    "empty_state": "Please add an equipment or start with the sample in the sidebar.",
+    "daily_consumption": "Your daily energy consumption is",
+    "converter_power": "You need a converter of more than"
+  },
+  "Hourly": {
+    "title": "Hourly Consumption Profile",
+    "subtitle": "24-hour Distribution",
+    "chart_title": "Daily Load Curve",
+    "hour": "Hour",
+    "consumption": "Consumption (W)",
+    "peak_consumption": "Peak consumption",
+    "average_consumption": "Average consumption",
+    "usage_hours": "Usage hours",
+    "start_hour": "Start hour",
+    "end_hour": "End hour",
+    "configure": "Configure schedules"
+  },
+  "Regulator": {
+    "title": "Charge Controller",
+    "subtitle": "MPPT/PWM Sizing",
+    "type": "Controller type",
+    "voltage": "System voltage (V)",
+    "pv_voltage": "PV panel voltage (V)",
+    "current": "Current (A)",
+    "power": "Power (W)",
+    "recommended": "Recommended controller",
+    "min_rating": "Minimum rating",
+    "safety_margin": "Safety margin (25%)"
+  },
+  "Wiring": {
+    "title": "Wiring and Protection",
+    "subtitle": "Cable sizing and protections",
+    "cable_length": "Cable length (m)",
+    "voltage_drop": "Max voltage drop (%)",
+    "pv_to_reg": "PV → Controller",
+    "reg_to_bat": "Controller → Batteries",
+    "bat_to_conv": "Batteries → Inverter",
+    "cable_section": "Cable section",
+    "fuse_rating": "Fuse rating",
+    "breaker_rating": "Circuit breaker",
+    "actual_drop": "Actual drop"
+  },
+  "Economics": {
+    "title": "Economic Analysis",
+    "costs_title": "Installation Costs",
+    "battery_cost": "Battery unit cost (€)",
+    "pv_cost": "PV panel unit cost (€)",
+    "converter_cost": "Converter cost (€)",
+    "regulator_cost": "Regulator cost (€)",
+    "installation_cost": "Installation cost (€)",
+    "total_batteries": "Total batteries",
+    "total_pv": "Total PV panels",
+    "total_system": "Total system cost",
+    "savings_title": "Return on Investment",
+    "electricity_price": "Electricity price (€/kWh)",
+    "daily_savings": "Daily savings",
+    "monthly_savings": "Monthly savings",
+    "annual_savings": "Annual savings",
+    "roi_years": "Return on investment",
+    "co2_title": "Environmental Impact",
+    "co2_avoided": "CO₂ avoided per year",
+    "trees_equivalent": "Equivalent trees planted"
+  }
+}

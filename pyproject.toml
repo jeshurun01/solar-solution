@@ -1,9 +1,17 @@
 [project]
 name = "solar-solution"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.3.0"
+description = "Solar system dimensioning application with battery and PV calculations"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "streamlit>=1.45.1",
+    "pandas>=2.2.0",
+    "plotly>=5.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
 ]
