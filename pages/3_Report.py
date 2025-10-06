@@ -52,29 +52,29 @@ with st.sidebar:
 # Top Navigation
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    if st.button(":material/home: " + t.get("nav_home", "Home"), width="stretch"):
+    if st.button(":material/home: " + t.get("nav_home", "Home"), width="stretch", key="nav_home_top"):
         st.switch_page("app.py")
 with col2:
-    if st.button(":material/bolt: " + t.get("nav_equipments", "Equipments"), width="stretch"):
+    if st.button(":material/bolt: " + t.get("nav_equipments", "Equipments"), width="stretch", key="nav_eq_top"):
         st.switch_page("pages/1_Equipments.py")
 with col3:
-    if st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Calculations"), width="stretch"):
+    if st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Calculations"), width="stretch", key="nav_calc_top"):
         st.switch_page("pages/2_Calculations.py")
 with col4:
-    st.button(":material/description: " + t.get("nav_report", "Report"), width="stretch", disabled=True, type="primary")
+    st.button(":material/description: " + t.get("nav_report", "Report"), width="stretch", disabled=True, type="primary", key="nav_report_top")
 
 st.markdown("---")
 
 # Check if equipment and calculations exist
 if factory.is_empty():
     st.warning(":material/warning: " + t.get("Main", {}).get("no_equipment", "No equipment added. Please add equipment first."))
-    if st.button("➕ " + t.get("nav_equipments", "Go to Equipments")):
+    if st.button("➕ " + t.get("nav_equipments", "Go to Equipments"), key="warn_goto_eq"):
         st.switch_page("pages/1_Equipments.py")
     st.stop()
 
 if "calculation_results" not in st.session_state or not st.session_state["calculation_results"]:
     st.warning(":material/warning: No calculations found. Please configure your system first.")
-    if st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Go to Calculations")):
+    if st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Go to Calculations"), key="warn_goto_calc"):
         st.switch_page("pages/2_Calculations.py")
     st.stop()
 
@@ -200,7 +200,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("### :material/print: Print Options")
     st.info(":material/lightbulb: Use your browser's print function (Ctrl+P or Cmd+P) to print or save as PDF.")
-    if st.button(":material/print: Print Report", width="stretch", type="primary"):
+    if st.button(":material/print: Print Report", width="stretch", type="primary", key="print_report_btn"):
         st.markdown("<script>window.print();</script>", unsafe_allow_html=True)
 
 # Report Header
@@ -610,13 +610,13 @@ st.markdown("---")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    if st.button(":material/home: " + t.get("nav_home", "Back to Home"), width="stretch"):
+    if st.button(":material/home: " + t.get("nav_home", "Back to Home"), width="stretch", key="action_home_bottom"):
         st.switch_page("app.py")
 
 with col2:
-    if st.button(":material/bolt: " + t.get("nav_equipments", "Modify Equipment"), width="stretch"):
+    if st.button(":material/bolt: " + t.get("nav_equipments", "Modify Equipment"), width="stretch", key="action_eq_bottom"):
         st.switch_page("pages/1_Equipments.py")
 
 with col3:
-    if st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Modify Calculations"), width="stretch"):
+    if st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Modify Calculations"), width="stretch", key="action_calc_bottom"):
         st.switch_page("pages/2_Calculations.py")

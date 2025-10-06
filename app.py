@@ -81,21 +81,21 @@ st.markdown("""
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    if st.button(":material/home: " + t.get("nav_home", "Home"), width="stretch", type="primary"):
+    if st.button(":material/home: " + t.get("nav_home", "Home"), width="stretch", type="primary", key="nav_home_home"):
         st.session_state["current_page"] = "home"
         
 with col2:
-    if st.button(":material/bolt: " + t.get("nav_equipments", "Equipments"), width="stretch"):
+    if st.button(":material/bolt: " + t.get("nav_equipments", "Equipments"), width="stretch", key="nav_eq_home"):
         st.session_state["current_page"] = "equipments"
         st.switch_page("pages/1_Equipments.py")
         
 with col3:
-    if st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Calculations"), width="stretch"):
+    if st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Calculations"), width="stretch", key="nav_calc_home"):
         st.session_state["current_page"] = "calculations"
         st.switch_page("pages/2_Calculations.py")
         
 with col4:
-    if st.button(":material/description: " + t.get("nav_report", "Report"), width="stretch"):
+    if st.button(":material/description: " + t.get("nav_report", "Report"), width="stretch", key="nav_report_home"):
         st.session_state["current_page"] = "report"
         st.switch_page("pages/3_Report.py")
 

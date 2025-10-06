@@ -51,15 +51,15 @@ with st.sidebar:
 # Top Navigation
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    if st.button(":material/home: " + t.get("nav_home", "Home"), width="stretch"):
+    if st.button(":material/home: " + t.get("nav_home", "Home"), width="stretch", key="nav_home_eq"):
         st.switch_page("app.py")
 with col2:
-    st.button(":material/bolt: " + t.get("nav_equipments", "Equipments"), width="stretch", disabled=True, type="primary")
+    st.button(":material/bolt: " + t.get("nav_equipments", "Equipments"), width="stretch", disabled=True, type="primary", key="nav_eq_eq")
 with col3:
-    if st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Calculations"), width="stretch"):
+    if st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Calculations"), width="stretch", key="nav_calc_eq"):
         st.switch_page("pages/2_Calculations.py")
 with col4:
-    if st.button(":material/description: " + t.get("nav_report", "Report"), width="stretch"):
+    if st.button(":material/description: " + t.get("nav_report", "Report"), width="stretch", key="nav_report_eq"):
         st.switch_page("pages/3_Report.py")
 
 st.markdown("---")
@@ -86,7 +86,7 @@ with st.sidebar:
             key="new_eq_start"
         )
     
-    if st.button(t["New Equipment"]["add button"], type="primary", width="stretch"):
+    if st.button(t["New Equipment"]["add button"], type="primary", width="stretch", key="add_equipment_btn"):
         # Validation
         if not name_input.strip():
             st.error(t["Validation"]["name_empty"])
@@ -140,7 +140,7 @@ with st.sidebar:
                     key="edit_eq_start"
                 )
             
-            if st.button(t["Edit Equipment"]["edit button"], type="secondary", width="stretch"):
+            if st.button(t["Edit Equipment"]["edit button"], type="secondary", width="stretch", key="edit_equipment_btn"):
                 if not new_name.strip():
                     st.error(t["Validation"]["name_empty"])
                 elif new_power <= 0:
@@ -204,7 +204,7 @@ with st.sidebar:
             st.markdown(f"- {t['New Equipment']['power']}: {selected_item.get('power', 0)} W")
             st.markdown(f"- {t['New Equipment']['time']}: {selected_item.get('time', 0)} h")
             
-            if st.button(t["Library"]["add_from_library"], width="stretch"):
+            if st.button(t["Library"]["add_from_library"], width="stretch", key="add_from_lib_btn"):
                 try:
                     factory.add_equipment(
                         name=selected_item.get("name", "Unknown"),
@@ -224,7 +224,7 @@ with st.sidebar:
     
     col1, col2 = st.columns(2)
     with col1:
-        if st.button(":material/list: " + t.get("Actions", {}).get("sample", "Sample"), width="stretch"):
+        if st.button(":material/list: " + t.get("Actions", {}).get("sample", "Sample"), width="stretch", key="sample_data_btn"):
             factory.delete_all_equipments()
             factory.add_equipment(name="Laptop", power=65, time=4, start_hour=9)
             factory.add_equipment(name="Television", power=150, time=8, start_hour=18)
@@ -235,7 +235,7 @@ with st.sidebar:
             st.rerun()
     
     with col2:
-        if st.button(":material/delete: " + t.get("Actions", {}).get("delete_all", "Delete All"), width="stretch"):
+        if st.button(":material/delete: " + t.get("Actions", {}).get("delete_all", "Delete All"), width="stretch", key="delete_all_btn"):
             if not factory.is_empty():
                 factory.delete_all_equipments()
                 st.success("All equipment deleted!")

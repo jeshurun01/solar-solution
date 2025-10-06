@@ -55,15 +55,15 @@ with st.sidebar:
 # Top Navigation
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    if st.button(":material/home: " + t.get("nav_home", "Home"), width="stretch"):
+    if st.button(":material/home: " + t.get("nav_home", "Home"), width="stretch", key="nav_home_calc"):
         st.switch_page("app.py")
 with col2:
-    if st.button(":material/bolt: " + t.get("nav_equipments", "Equipments"), width="stretch"):
+    if st.button(":material/bolt: " + t.get("nav_equipments", "Equipments"), width="stretch", key="nav_eq_calc"):
         st.switch_page("pages/1_Equipments.py")
 with col3:
-    st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Calculations"), width="stretch", disabled=True, type="primary")
+    st.button(":material/battery_charging_full: " + t.get("nav_calculations", "Calculations"), width="stretch", disabled=True, type="primary", key="nav_calc_calc")
 with col4:
-    if st.button(":material/description: " + t.get("nav_report", "Report"), width="stretch"):
+    if st.button(":material/description: " + t.get("nav_report", "Report"), width="stretch", key="nav_report_calc"):
         st.switch_page("pages/3_Report.py")
 
 st.markdown("---")
@@ -565,5 +565,5 @@ st.session_state["calculation_results"] = {
 
 # Action button
 st.markdown("---")
-if st.button(":material/description: " + t.get("nav_report", "Generate Report"), type="primary", width="stretch"):
+if st.button(":material/description: " + t.get("nav_report", "Generate Report"), type="primary", width="stretch", key="generate_report_btn"):
     st.switch_page("pages/3_Report.py")
